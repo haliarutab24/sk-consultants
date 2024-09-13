@@ -41,17 +41,27 @@ const Logo = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="mr-2"
   >
+    {/* Outer Circle representing global reach */}
     <circle cx="60" cy="60" r="58" stroke="currentColor" strokeWidth="4" />
+
+    {/* Bars representing data/analytics moving upward */}
+    <rect x="40" y="65" width="5" height="20" fill="green" />
+    <rect x="52" y="55" width="5" height="30" fill="green" />
+    <rect x="64" y="45" width="5" height="40" fill="green" />
+    <rect x="76" y="35" width="5" height="50" fill="green" />
+
+    {/* Arrow integrated into the bar chart */}
     <path
-      d="M30 40H90M30 60H90M30 80H90"
-      stroke="currentColor"
-      strokeWidth="4"
+      d="M35 75 L50 55 L65 65 L80 40"
+      stroke="green"
+      strokeWidth="6"
+      fill="none"
       strokeLinecap="round"
     />
     <path
-      d="M45 30L75 90"
-      stroke="currentColor"
-      strokeWidth="4"
+      d="M75 40 L80 40 L80 50"
+      stroke="green"
+      strokeWidth="6"
       strokeLinecap="round"
     />
   </svg>
