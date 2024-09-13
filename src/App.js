@@ -40,32 +40,17 @@ const Logo = () => (
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className="mr-2"
   >
-    <circle cx="20" cy="20" r="19" fill="#E6F7FF" />
-
-    <circle cx="20" cy="20" r="18" stroke="#0066CC" strokeWidth="2" />
-
+    <circle cx="20" cy="20" r="20" fill="#0066CC" />
     <path
-      d="M12 12H28L12 28H28"
-      stroke="#0066CC"
+      d="M10 10H30L10 30H30"
+      stroke="#FFFFFF"
       strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-
-    <path
-      d="M20 24L20 16"
-      stroke="#00CC66"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M17 19L20 16L23 19"
-      stroke="#00CC66"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <circle cx="20" cy="20" r="8" stroke="#00CC66" strokeWidth="2" />
   </svg>
 );
 
