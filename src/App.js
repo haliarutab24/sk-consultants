@@ -24,8 +24,7 @@ const App = () => {
         <Intro />
         <Services />
         <WhyChooseUs />
-        {/* Uncomment Testimonials section when needed */}
-        {/* <Testimonials /> */}
+
         <ContactSection />
       </main>
       <Footer />
