@@ -16,6 +16,7 @@ import {
   Database,
   Briefcase,
 } from "lucide-react";
+import { useSpring, animated, config } from "react-spring";
 
 const App = () => {
   return (
@@ -32,6 +33,31 @@ const App = () => {
     </div>
   );
 };
+
+const Logo = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 120 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="mr-2"
+  >
+    <circle cx="60" cy="60" r="58" stroke="currentColor" strokeWidth="4" />
+    <path
+      d="M30 40H90M30 60H90M30 80H90"
+      stroke="currentColor"
+      strokeWidth="4"
+      strokeLinecap="round"
+    />
+    <path
+      d="M45 30L75 90"
+      stroke="currentColor"
+      strokeWidth="4"
+      strokeLinecap="round"
+    />
+  </svg>
+);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,10 +88,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           <a
             href="#home"
-            className={`font-bold text-xl ${
+            className={`font-bold text-xl flex items-center ${
               isScrolled ? "text-blue-800" : "text-white"
             }`}
           >
+            <Logo />
             ZSM Consultants
           </a>
           <div className="hidden md:flex space-x-4">
@@ -108,21 +135,57 @@ const Navbar = () => {
   );
 };
 
-const Header = () => (
-  <header
-    id="home"
-    className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-32 px-4"
-  >
-    <div className="container mx-auto text-center pt-16">
-      <h1 className="text-6xl font-bold mb-4 animate-fade-in">
-        ZSM Consultants
-      </h1>
-      <p className="text-2xl animate-fade-in-delay">
-        Innovative Global Business Solutions for Tomorrow's Challenges
-      </p>
+const Header = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translateY(20px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    config: config.molasses,
+  });
+
+  return (
+    <header className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-32 px-4 relative overflow-hidden">
+      <div className="container mx-auto flex flex-col items-center relative z-10">
+        <animated.h1
+          style={fadeIn}
+          className="text-5xl font-bold mb-4 text-center"
+        >
+          ZSM Consultants
+        </animated.h1>
+        <animated.p
+          style={fadeIn}
+          className="text-xl mb-8 text-center max-w-2xl"
+        >
+          Innovative Global Business Solutions for Tomorrow's Challenges
+        </animated.p>
+      </div>
+      <AnimatedBackground />
+    </header>
+  );
+};
+
+const AnimatedBackground = () => {
+  const circles = [
+    { size: "w-64 h-64", animation: "animate-float-slow", delay: "0s" },
+    { size: "w-48 h-48", animation: "animate-float-medium", delay: "2s" },
+    { size: "w-32 h-32", animation: "animate-float-fast", delay: "1s" },
+  ];
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {circles.map((circle, index) => (
+        <div
+          key={index}
+          className={`absolute rounded-full bg-white opacity-10 ${circle.size} ${circle.animation}`}
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDelay: circle.delay,
+          }}
+        ></div>
+      ))}
     </div>
-  </header>
-);
+  );
+};
 
 const Intro = () => (
   <section className="text-center my-20">
