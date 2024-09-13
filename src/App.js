@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   ChartLine,
-  Users,
-  Scale,
   Mail,
   Linkedin,
   Phone,
@@ -11,7 +9,6 @@ import {
   CheckCircle,
   Menu,
   X,
-  Rocket,
   FileSpreadsheet,
   Database,
   Briefcase,
@@ -27,6 +24,8 @@ const App = () => {
         <Intro />
         <Services />
         <WhyChooseUs />
+        {/* Uncomment Testimonials section when needed */}
+        {/* <Testimonials /> */}
         <ContactSection />
       </main>
       <Footer />
@@ -157,6 +156,13 @@ const Header = () => {
         >
           Innovative Global Business Solutions for Tomorrow's Challenges
         </animated.p>
+        <animated.a
+          href="#contact"
+          style={fadeIn}
+          className="bg-white text-blue-800 py-2 px-6 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-all duration-300"
+        >
+          Contact Us
+        </animated.a>
       </div>
       <AnimatedBackground />
     </header>
@@ -188,7 +194,7 @@ const AnimatedBackground = () => {
 };
 
 const Intro = () => (
-  <section className="text-center my-20">
+  <section id="home" className="text-center my-20">
     <h2 className="text-4xl font-bold text-blue-800 mb-6">
       Empowering Global Businesses with Financial Expertise
     </h2>
@@ -228,7 +234,7 @@ const Services = () => {
       title: "Financial Planning & Accounting",
       items: [
         "Comprehensive Financial Reporting",
-        "Strategic  Tax Planning",
+        "Strategic Tax Planning",
         "Accounting & Bookkeeping Services",
         "Risk Management & Financial Compliance",
       ],
@@ -325,6 +331,51 @@ const WhyChooseUs = () => {
     </section>
   );
 };
+
+{
+  /*}
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: "John Doe",
+      role: "CEO, Tech Corp",
+      quote:
+        "ZSM Consultants helped us streamline our global operations with their ERP solutions. Their expertise is unmatched.",
+    },
+    {
+      name: "Jane Smith",
+      role: "CFO, Global Finance",
+      quote:
+        "The financial planning services provided by ZSM Consultants have been a game changer for our business expansion.",
+    },
+  ];
+
+  return (
+    <section
+      id="testimonials"
+      className="my-20 scroll-mt-20 bg-gray-100 p-12 rounded-lg"
+    >
+      <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">
+        What Our Clients Say
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+            <h3 className="text-lg font-semibold text-blue-800 mt-4">
+              {testimonial.name}
+            </h3>
+            <p className="text-gray-500">{testimonial.role}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};*/
+}
 
 const ContactSection = () => (
   <section

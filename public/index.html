@@ -1,43 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Optimization -->
+    <title>ZSM Consultants - Global Business Solutions</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="ZSM Consultants offers global financial planning, ERP, and business solutions to empower startups and established businesses."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="ZSM Consultants - Global Business Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Empowering businesses with comprehensive financial planning, ERP solutions, and global expertise."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:url" content="https://www.zsmconsultants.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ZSM Consultants - Global Business Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="Empowering businesses with comprehensive financial planning, ERP solutions, and global expertise."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-image.jpg" />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Web Fonts (Optional for Branding) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Canonical Link for SEO -->
+    <link rel="canonical" href="https://www.zsmconsultants.com/" />
+
+    <!-- Schema.org JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ZSM Consultants",
+        "url": "https://www.zsmconsultants.com",
+        "logo": "%PUBLIC_URL%/logo192.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/zsmconsultants",
+          "https://twitter.com/zsmconsultants"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44 7502362347",
+          "contactType": "Customer Service",
+          "areaServed": "Worldwide",
+          "availableLanguage": "English"
+        }
+      }
+    </script>
+
+    <!-- Title & Description for Mobile Devices -->
+    <meta name="apple-mobile-web-app-title" content="ZSM Consultants" />
+    <meta
+      name="description"
+      content="Global financial planning and ERP solutions for startups and enterprises."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles.css" />
   </head>
   <body>
+    <!-- Fallback Message for No JavaScript -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Root DOM Node -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Web Vitals Script (Optional for Performance Monitoring) -->
+    <script defer src="%PUBLIC_URL%/web-vitals.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- Main React App Bundle -->
+    <script defer src="%PUBLIC_URL%/bundle.js"></script>
   </body>
 </html>
