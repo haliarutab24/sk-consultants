@@ -12,6 +12,7 @@ import {
   FileSpreadsheet,
   Database,
   Briefcase,
+  MapPin,
 } from "lucide-react";
 import { useSpring, animated, config } from "react-spring";
 
@@ -36,33 +37,34 @@ const Logo = () => (
   <svg
     width="40"
     height="40"
-    viewBox="0 0 120 120"
+    viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="mr-2"
   >
-    {/* Outer Circle representing global reach */}
-    <circle cx="60" cy="60" r="58" stroke="currentColor" strokeWidth="4" />
+    <circle cx="20" cy="20" r="19" fill="#E6F7FF" />
 
-    {/* Bars representing data/analytics moving upward */}
-    <rect x="40" y="65" width="5" height="20" fill="green" />
-    <rect x="52" y="55" width="5" height="30" fill="green" />
-    <rect x="64" y="45" width="5" height="40" fill="green" />
-    <rect x="76" y="35" width="5" height="50" fill="green" />
+    <circle cx="20" cy="20" r="18" stroke="#0066CC" strokeWidth="2" />
 
-    {/* Arrow integrated into the bar chart */}
     <path
-      d="M35 75 L50 55 L65 65 L80 40"
-      stroke="green"
-      strokeWidth="6"
-      fill="none"
+      d="M12 12H28L12 28H28"
+      stroke="#0066CC"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+
+    <path
+      d="M20 24L20 16"
+      stroke="#00CC66"
+      strokeWidth="2"
       strokeLinecap="round"
     />
     <path
-      d="M75 40 L80 40 L80 50"
-      stroke="green"
-      strokeWidth="6"
+      d="M17 19L20 16L23 19"
+      stroke="#00CC66"
+      strokeWidth="2"
       strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -151,24 +153,24 @@ const Header = () => {
   });
 
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-32 px-4 relative overflow-hidden">
+    <header className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-24 px-4 relative overflow-hidden">
       <div className="container mx-auto flex flex-col items-center relative z-10">
         <animated.h1
           style={fadeIn}
-          className="text-5xl font-bold mb-4 text-center"
+          className="text-5xl md:text-6xl font-bold mb-4 text-center leading-tight"
         >
           ZSM Consultants
         </animated.h1>
         <animated.p
           style={fadeIn}
-          className="text-xl mb-8 text-center max-w-2xl"
+          className="text-xl md:text-2xl mb-8 text-center max-w-2xl leading-relaxed"
         >
           Innovative Global Business Solutions for Tomorrow's Challenges
         </animated.p>
         <animated.a
           href="#contact"
           style={fadeIn}
-          className="bg-white text-blue-800 py-2 px-6 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-all duration-300"
+          className="bg-white text-blue-800 py-3 px-8 rounded-full font-semibold text-lg hover:bg-green-500 hover:text-white transition-all duration-300"
         >
           Contact Us
         </animated.a>
@@ -179,22 +181,28 @@ const Header = () => {
 };
 
 const AnimatedBackground = () => {
-  const circles = [
+  const bubbles = [
     { size: "w-64 h-64", animation: "animate-float-slow", delay: "0s" },
     { size: "w-48 h-48", animation: "animate-float-medium", delay: "2s" },
     { size: "w-32 h-32", animation: "animate-float-fast", delay: "1s" },
+    { size: "w-24 h-24", animation: "animate-float-slow", delay: "3s" },
+    { size: "w-16 h-16", animation: "animate-float-medium", delay: "0.5s" },
+    { size: "w-12 h-12", animation: "animate-float-fast", delay: "1.5s" },
+    { size: "w-8 h-8", animation: "animate-float-slow", delay: "2.5s" },
+    { size: "w-6 h-6", animation: "animate-float-medium", delay: "3.5s" },
+    { size: "w-4 h-4", animation: "animate-float-fast", delay: "4s" },
   ];
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {circles.map((circle, index) => (
+      {bubbles.map((bubble, index) => (
         <div
           key={index}
-          className={`absolute rounded-full bg-white opacity-10 ${circle.size} ${circle.animation}`}
+          className={`absolute rounded-full bg-white opacity-10 ${bubble.size} ${bubble.animation}`}
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
-            animationDelay: circle.delay,
+            animationDelay: bubble.delay,
           }}
         ></div>
       ))}
@@ -203,8 +211,8 @@ const AnimatedBackground = () => {
 };
 
 const Intro = () => (
-  <section id="home" className="text-center my-20">
-    <h2 className="text-4xl font-bold text-blue-800 mb-6">
+  <section id="home" className="text-center my-24">
+    <h2 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6 leading-tight">
       Empowering Global Businesses with Financial Expertise
     </h2>
     <p className="text-xl max-w-3xl mx-auto leading-relaxed mb-8">
@@ -271,11 +279,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="my-20 scroll-mt-20">
-      <h2 className="text-4xl font-bold text-blue-800 text-center mb-6">
+    <section id="services" className="my-24 scroll-mt-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-blue-800 text-center mb-6 leading-tight">
         Our Comprehensive Services
       </h2>
-      <p className="text-xl text-center max-w-3xl mx-auto mb-12">
+      <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto mb-12 leading-relaxed">
         Leveraging expertise in finance, technology, and global business
         practices to provide integrated solutions for businesses of all sizes.
       </p>
@@ -319,8 +327,8 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-us" className="my-20 scroll-mt-20">
-      <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">
+    <section id="why-us" className="my-24 scroll-mt-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-blue-800 text-center mb-12 leading-tight">
         Why Choose ZSM Consultants?
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -341,57 +349,12 @@ const WhyChooseUs = () => {
   );
 };
 
-{
-  /*}
-const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "John Doe",
-      role: "CEO, Tech Corp",
-      quote:
-        "ZSM Consultants helped us streamline our global operations with their ERP solutions. Their expertise is unmatched.",
-    },
-    {
-      name: "Jane Smith",
-      role: "CFO, Global Finance",
-      quote:
-        "The financial planning services provided by ZSM Consultants have been a game changer for our business expansion.",
-    },
-  ];
-
-  return (
-    <section
-      id="testimonials"
-      className="my-20 scroll-mt-20 bg-gray-100 p-12 rounded-lg"
-    >
-      <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">
-        What Our Clients Say
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            <p className="text-gray-600 italic">"{testimonial.quote}"</p>
-            <h3 className="text-lg font-semibold text-blue-800 mt-4">
-              {testimonial.name}
-            </h3>
-            <p className="text-gray-500">{testimonial.role}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};*/
-}
-
 const ContactSection = () => (
   <section
     id="contact"
-    className="bg-gradient-to-r from-blue-800 to-green-500 text-white p-12 rounded-lg my-20 scroll-mt-20"
+    className="bg-gradient-to-r from-blue-800 to-green-500 text-white p-12 rounded-lg my-24 scroll-mt-20"
   >
-    <h2 className="text-4xl font-bold text-center mb-8">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 leading-tight">
       Contact Us Today for a Free Consultation
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -439,10 +402,87 @@ const ContactItem = ({ icon, label, children }) => (
 );
 
 const Footer = () => (
-  <footer className="bg-gray-800 text-white py-8">
-    <div className="container mx-auto px-4 text-center">
-      <p>&copy; 2024 ZSM Consultants. All rights reserved.</p>
-      <p className="mt-2">Your Global Partner in Business Excellence</p>
+  <footer className="bg-gray-800 text-white py-12">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 className="text-lg font-semibold mb-4">ZSM Consultants</h3>
+          <p className="mb-2">Your Global Partner in Business Excellence</p>
+          <div className="flex items-center mb-2">
+            <MapPin size={16} className="mr-2" />
+            <span>London, UK (HQ) | Pakistan (Operations)</span>
+          </div>
+          <div className="flex items-center mb-2">
+            <Phone size={16} className="mr-2" />
+            <span>UK: +44 7502362347 | PK: +92 346 2780821</span>
+          </div>
+          <div className="flex items-center">
+            <Mail size={16} className="mr-2" />
+            <a
+              href="mailto:info@zsmconsultants.com"
+              className="hover:underline"
+            >
+              info@zsmconsultants.com
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="#home" className="hover:underline">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#services" className="hover:underline">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#why-us" className="hover:underline">
+                Why Choose Us
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:underline">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Legal</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="/terms" className="hover:underline">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" className="hover:underline">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="/cookies" className="hover:underline">
+                Cookie Policy
+              </a>
+            </li>
+            <li>
+              <a href="/disclaimer" className="hover:underline">
+                Disclaimer
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p>
+          &copy; {new Date().getFullYear()} ZSM Consultants. All rights
+          reserved.
+        </p>
+      </div>
     </div>
   </footer>
 );
