@@ -361,7 +361,7 @@ const WhyChooseUs = () => {
   return (
     <section id="why-us" className="my-32 scroll-mt-20">
       <h2 className="text-5xl md:text-6xl font-bold text-blue-800 text-center mb-16 leading-tight">
-        Why Partner with ZSM Consultants?
+        Why Choose Us?
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reasons.map((reason, index) => (
