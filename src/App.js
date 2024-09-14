@@ -387,12 +387,12 @@ const ContactSection = () => (
     className="bg-gradient-to-r from-blue-800 to-green-500 text-white p-16 rounded-3xl my-32 scroll-mt-20 shadow-2xl"
   >
     <h2 className="text-5xl md:text-6xl font-bold text-center mb-10 leading-tight">
-      Start Your Financial Transformation
+      We're just a click or call away!
     </h2>
     <p className="text-xl text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-      From startups to established enterprises, we have the expertise to
-      optimize your financial operations and fuel your growth. Book your free
-      consultation now and take the first step towards financial transformation.
+      Ready to optimize your finances and fuel growth? Let's chat! Book a free
+      consultation and take the first step towards transforming your business's
+      financial future.
     </p>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
       <ContactItem icon={<Mail size={28} />} label="Email">
