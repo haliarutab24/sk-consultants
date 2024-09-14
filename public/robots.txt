@@ -1,6 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
 
-# Optional: If you want to block specific directories, add them here.
-# Example: Disallow: /admin/
+Sitemap: https://www.zsmconsultants.com/sitemap.xml
