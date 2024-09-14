@@ -81,15 +81,25 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
+          {/* Logo and Brand */}
           <a
             href="#home"
             className={`font-bold text-xl flex items-center ${
               isScrolled ? "text-blue-800" : "text-white"
             }`}
           >
-            <Logo />
-            ZSM Consultants
+            <img
+              src="/zsmlogo.png"
+              alt="ZSM Consultants Logo"
+              className="h-10 w-10 mr-2 rounded-full"
+            />
+
+            <span className={isScrolled ? "text-blue-800" : "text-white"}>
+              ZSM Consultants
+            </span>
           </a>
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <a
@@ -103,6 +113,8 @@ const Navbar = () => {
               </a>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
             {isOpen ? (
               <X className={isScrolled ? "text-gray-800" : "text-white"} />
@@ -112,6 +124,8 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white">
           {navItems.map((item) => (
