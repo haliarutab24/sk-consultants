@@ -60,7 +60,6 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          {/* Logo and Brand */}
           <a
             href="#home"
             className={`font-bold text-xl flex items-center ${
@@ -70,18 +69,17 @@ const Navbar = () => {
             <img
               src="/zsmlogo.png"
               alt="ZSM Consultants Logo"
-              className="h-12 w-12 mr-2 rounded-full shadow-md"
+              className="h-8 w-8 sm:h-12 sm:w-12 mr-2 rounded-full shadow-md"
             />
             <span
               className={`${
                 isScrolled ? "text-blue-800" : "text-white"
-              } text-2xl`}
+              } text-lg sm:text-2xl`}
             >
               ZSM Consultants
             </span>
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <a
@@ -96,18 +94,22 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
             {isOpen ? (
-              <X className={isScrolled ? "text-gray-800" : "text-white"} />
+              <X
+                className={isScrolled ? "text-gray-800" : "text-white"}
+                size={24}
+              />
             ) : (
-              <Menu className={isScrolled ? "text-gray-800" : "text-white"} />
+              <Menu
+                className={isScrolled ? "text-gray-800" : "text-white"}
+                size={24}
+              />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white">
           {navItems.map((item) => (
@@ -134,17 +136,17 @@ const Header = () => {
   });
 
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-32 px-4 relative overflow-hidden">
+    <header className="bg-gradient-to-r from-blue-800 to-green-500 text-white py-20 sm:py-32 px-4 relative overflow-hidden">
       <div className="container mx-auto flex flex-col items-center relative z-10">
         <animated.h1
           style={fadeIn}
-          className="text-6xl md:text-7xl font-bold mb-6 text-center leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-center leading-tight"
         >
           Global Financial Excellence
         </animated.h1>
         <animated.p
           style={fadeIn}
-          className="text-xl md:text-2xl mb-10 text-center max-w-2xl leading-relaxed"
+          className="text-lg sm:text-xl md:text-2xl mb-10 text-center max-w-2xl leading-relaxed"
         >
           Expert Accounting, ERP, and Business Growth Solutions for the Global
           Market
@@ -152,7 +154,7 @@ const Header = () => {
         <animated.a
           href="#contact"
           style={fadeIn}
-          className="bg-white text-blue-800 py-3 px-8 rounded-full font-semibold text-lg hover:bg-green-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="bg-white text-blue-800 py-2 px-6 sm:py-3 sm:px-8 rounded-full font-semibold text-base sm:text-lg hover:bg-green-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
           Get Started
         </animated.a>
@@ -193,24 +195,24 @@ const AnimatedBackground = () => {
 };
 
 const Intro = () => (
-  <section id="home" className="text-center my-24">
-    <h2 className="text-5xl md:text-6xl font-bold text-blue-800 mb-8 leading-tight">
+  <section id="home" className="text-center my-16 sm:my-24 px-4">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-800 mb-6 sm:mb-8 leading-tight">
       Tailored Solutions for Every Stage
     </h2>
-    <p className="text-xl max-w-3xl mx-auto leading-relaxed mb-12">
+    <p className="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12">
       At ZSM Consultants, we specialize in providing comprehensive financial
       planning, accounting, and ERP solutions for businesses worldwide. Our core
       expertise is complemented by a range of HR, legal, and IT services,
       offering a holistic approach to global business management.
     </p>
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-8">
       <TargetAudience
-        icon={<Briefcase size={48} />}
+        icon={<Briefcase size={40} />}
         title="For Startups"
         description="Set a strong financial foundation with our tailored accounting and ERP solutions, designed to scale as you grow globally."
       />
       <TargetAudience
-        icon={<Building size={48} />}
+        icon={<Building size={40} />}
         title="For Established Businesses"
         description="Optimize your financial operations and expand internationally with our advanced planning and compliance services."
       />
@@ -218,10 +220,12 @@ const Intro = () => (
   </section>
 );
 const TargetAudience = ({ icon, title, description }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-sm transform hover:-translate-y-2">
-    <div className="text-green-500 mb-6">{icon}</div>
-    <h3 className="text-2xl font-semibold text-blue-800 mb-4">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+  <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 max-w-sm transform hover:-translate-y-2">
+    <div className="text-green-500 mb-4 sm:mb-6">{icon}</div>
+    <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 sm:mb-4">
+      {title}
+    </h3>
+    <p className="text-gray-600 text-sm sm:text-base">{description}</p>
   </div>
 );
 
@@ -261,15 +265,15 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="my-32 scroll-mt-20">
-      <h2 className="text-5xl md:text-6xl font-bold text-blue-800 text-center mb-8 leading-tight">
+    <section id="services" className="my-20 sm:my-32 scroll-mt-20 px-4">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-800 text-center mb-6 sm:mb-8 leading-tight">
         Streamline, Optimize, and Grow
       </h2>
-      <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+      <p className="text-lg sm:text-xl md:text-2xl text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed">
         Leveraging expertise in finance, technology, and global business
         practices to provide integrated solutions for businesses of all sizes.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
@@ -279,15 +283,20 @@ const Services = () => {
 };
 
 const ServiceCard = ({ icon, title, items }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform">
-    <div className="text-green-500 mb-6">{icon}</div>
-    <h3 className="text-2xl font-semibold text-blue-800 mb-6">{title}</h3>
-    <ul className="space-y-3">
+  <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform">
+    <div className="text-green-500 mb-4 sm:mb-6">{icon}</div>
+    <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-4 sm:mb-6">
+      {title}
+    </h3>
+    <ul className="space-y-2 sm:space-y-3">
       {items.map((item, index) => (
-        <li key={index} className="flex items-center text-gray-700">
+        <li
+          key={index}
+          className="flex items-center text-gray-700 text-sm sm:text-base"
+        >
           <CheckCircle
-            size={20}
-            className="text-green-500 mr-3 flex-shrink-0"
+            size={16}
+            className="text-green-500 mr-2 sm:mr-3 flex-shrink-0"
           />
           <span>{item}</span>
         </li>
@@ -359,21 +368,21 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-us" className="my-32 scroll-mt-20">
-      <h2 className="text-5xl md:text-6xl font-bold text-blue-800 text-center mb-16 leading-tight">
+    <section id="why-us" className="my-20 sm:my-32 scroll-mt-20 px-4">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-800 text-center mb-12 sm:mb-16 leading-tight">
         Why Choose Us?
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="flex items-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            className="flex items-center bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             <CheckCircle
-              size={28}
-              className="text-green-500 mr-4 flex-shrink-0"
+              size={24}
+              className="text-green-500 mr-3 sm:mr-4 flex-shrink-0"
             />
-            <span className="text-lg text-gray-800">{reason}</span>
+            <span className="text-base sm:text-lg text-gray-800">{reason}</span>
           </div>
         ))}
       </div>
@@ -384,26 +393,26 @@ const WhyChooseUs = () => {
 const ContactSection = () => (
   <section
     id="contact"
-    className="bg-gradient-to-r from-blue-800 to-green-500 text-white p-16 rounded-3xl my-32 scroll-mt-20 shadow-2xl"
+    className="bg-gradient-to-r from-blue-800 to-green-500 text-white p-4 sm:p-8 md:p-16 rounded-3xl my-8 md:my-32 scroll-mt-20 shadow-2xl"
   >
-    <h2 className="text-5xl md:text-6xl font-bold text-center mb-10 leading-tight">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-10 leading-tight">
       We're just a click or call away!
     </h2>
-    <p className="text-xl text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+    <p className="text-lg md:text-xl text-center max-w-3xl mx-auto mb-8 md:mb-16 leading-relaxed">
       Ready to optimize your finances and fuel growth? Let's chat! Book a free
       consultation and take the first step towards transforming your business's
       financial future.
     </p>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-      <ContactItem icon={<Mail size={28} />} label="Email">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto">
+      <ContactItem icon={<Mail size={24} />} label="Email">
         <a
           href="mailto:info@zsmconsultants.com"
-          className="hover:underline transition-colors duration-300"
+          className="hover:underline transition-colors duration-300 break-all"
         >
           info@zsmconsultants.com
         </a>
       </ContactItem>
-      <ContactItem icon={<Linkedin size={28} />} label="LinkedIn">
+      <ContactItem icon={<Linkedin size={24} />} label="LinkedIn">
         <a
           href="https://www.linkedin.com/company/zsmconsultants"
           target="_blank"
@@ -413,23 +422,23 @@ const ContactSection = () => (
           zsmconsultants
         </a>
       </ContactItem>
-      <ContactItem icon={<Phone size={28} />} label="Phone (Pakistan)">
+      <ContactItem icon={<Phone size={24} />} label="Phone (Pakistan)">
         +92 346 2780821
       </ContactItem>
-      <ContactItem icon={<Phone size={28} />} label="Phone (UK)">
+      <ContactItem icon={<Phone size={24} />} label="Phone (UK)">
         +44 7502362347
       </ContactItem>
-      <ContactItem icon={<Building size={28} />} label="Headquarters">
+      <ContactItem icon={<Building size={24} />} label="Headquarters">
         London, UK
       </ContactItem>
-      <ContactItem icon={<Globe size={28} />} label="Operations">
+      <ContactItem icon={<Globe size={24} />} label="Operations">
         UK & Pakistan
       </ContactItem>
     </div>
-    <div className="text-center mt-16">
+    <div className="text-center mt-8 md:mt-16">
       <a
         href="#contact"
-        className="inline-flex items-center bg-white text-blue-800 py-3 px-8 rounded-full font-semibold text-lg hover:bg-green-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        className="inline-flex items-center bg-white text-blue-800 py-2 px-6 md:py-3 md:px-8 rounded-full font-semibold text-base md:text-lg hover:bg-green-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
         Schedule Consultation
         <ArrowRight size={20} className="ml-2" />
@@ -439,11 +448,13 @@ const ContactSection = () => (
 );
 
 const ContactItem = ({ icon, label, children }) => (
-  <div className="flex items-center space-x-4">
-    <div className="bg-white bg-opacity-20 p-3 rounded-full">{icon}</div>
-    <div>
-      <span className="font-semibold text-lg">{label}</span>
-      <div className="text-xl">{children}</div>
+  <div className="flex items-start space-x-4">
+    <div className="bg-white bg-opacity-20 p-2 md:p-3 rounded-full flex-shrink-0">
+      {icon}
+    </div>
+    <div className="flex-grow min-w-0">
+      <span className="font-semibold text-base md:text-lg block">{label}</span>
+      <div className="text-sm md:text-base break-words">{children}</div>
     </div>
   </div>
 );
