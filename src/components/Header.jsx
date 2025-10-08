@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated, config } from 'react-spring';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRight, Zap } from 'lucide-react';
 
 const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -95,7 +96,7 @@ const Header = () => {
           style={fadeIn}
           className="text-center max-w-4xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold mb-6 text-white leading-tight drop-shadow-2xl">
             Global Financial Excellence
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl mb-10 text-white/90 max-w-3xl leading-relaxed drop-shadow-lg">
@@ -105,16 +106,26 @@ const Header = () => {
             <animated.a
               href="#contact"
               style={fadeIn}
-              className="bg-white text-blue-800 py-3 px-8 rounded-full font-semibold text-lg hover:bg-green-500 hover:text-white transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+              className="group relative bg-gradient-to-r from-cyan-500 to-blue-500 text-black py-3 px-8 rounded-xl font-bold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50 transform hover:-translate-y-1 hover:scale-105"
             >
-              Get Started
+              {/* Button Glow Effect */}
+              <div className="absolute inset-0 bg-cyan-400 rounded-xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+              
+              {/* Button Content */}
+              <span className="relative z-10 flex items-center">
+                Get Started
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </animated.a>
             <animated.a
-              href="#services"
+              href="#about-us"
               style={fadeIn}
-              className="border-2 border-white text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-800 transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="group relative border-2 border-cyan-400 text-cyan-400 py-3 px-8 rounded-xl font-bold text-lg hover:bg-cyan-400/10 transition-all duration-300 shadow-2xl hover:shadow-cyan-400/25 backdrop-blur-sm transform hover:-translate-y-1"
             >
-              Our Services
+              <span className="flex items-center">
+                <Zap size={20} className="mr-2 group-hover:scale-110 transition-transform duration-300" />
+                Our Services
+              </span>
             </animated.a>
           </div>
         </animated.div>
